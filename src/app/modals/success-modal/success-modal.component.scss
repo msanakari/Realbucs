@@ -1,0 +1,184 @@
+.modal-wrapper-design {
+    width: 100%;
+    height: 100%;
+    z-index: 99997;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+
+.modal-wrapper-design {
+    padding: 16px;
+}
+
+.employer-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.employer-box {
+    scrollbar-width: none;
+}
+
+.employer-box::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.employer-box {
+    position: relative;
+    max-width: 720px;
+    width: 100%;
+    border-radius: 16px;
+    background: #FFF;
+    padding: 0px;
+    max-height: 100%;
+    overflow-y: scroll;
+    margin: auto;
+
+    .archived_modal {
+        width: 720px;
+        border-radius: 16px;
+        background: #FFF;
+
+        .close_btn_div {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+
+            .new_close_btn {
+                border: none;
+                background: #FFF;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        .brand_icon {
+            img {
+                width: 119px;
+                height: 63px;
+            }
+        }
+
+        .modal_title {
+            .modal_title_text {
+                color: #000;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.72px;
+            }
+
+            .modal_title_subtext {
+                color: #64748B;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.42px;
+            }
+        }
+
+        button {
+            width: 100%;
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.48px;
+            border-radius: 6px;
+            background: #024FF0;
+            height: 44px;
+            border: none;
+        }
+
+        .disabled_btn {
+            background: #e7ecf1;
+            color: #000;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .modal-wrapper-design {
+        padding: 8px;
+    }
+
+    .employer-box {
+        max-width: 100%;
+
+        .archived_modal {
+            width: 100%;
+
+            .close_btn_div {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+
+                .new_close_btn {
+                    border: none;
+                    background: #FFF;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            .brand_icon {
+                img {
+                    width: 90px;
+                    height: 50px;
+                }
+            }
+
+            .modal_title {
+                .modal_title_text {
+                    font-size: 20px;
+                    letter-spacing: 0.6px;
+                }
+
+                .modal_title_subtext {
+                    font-size: 14px;
+                    letter-spacing: 0.48px;
+                    line-height: 20px;
+                }
+            }
+
+            button {
+                height: 36px;
+            }
+        }
+    }
+}
+
+input::placeholder {
+    color: #64748B;
+    opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+    color: #64748B;
+}
+
+input::-moz-placeholder {
+    color: #64748B;
+}
+
+input:-ms-input-placeholder {
+    color: #64748B;
+}
+
+input::-ms-input-placeholder {
+    color: #64748B;
+}

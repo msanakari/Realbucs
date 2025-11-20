@@ -1,0 +1,32 @@
+<div class="container px-3 px-md-36 px-lg-72 ">
+    <section class="py-24 py-lg-72 d-flex flex-column justify-content-center align-items-center gap-24 gap-lg-40">
+        <div class="section_title d-flex flex-column gap-2 gap-lg-3 ">
+            <h3 class="m-0 text-center">Discover your potential savings with RealBucs</h3>
+            <p class="text-center m-0">Enter Your Listing Price Below to See Your Potential Savings with RealBucs.</p>
+        </div>
+
+        <div class="price_div d-flex flex-column align-items-center  gap-24">
+            <div class="price_div_top d-flex align-items-center align-self-stretch justify-content-between">
+                <p class="text m-0">Listing Price</p>
+                <p class="price_text m-0">${{value | number}}</p>
+            </div>
+            <ngx-slider [(value)]="value" [options]="options" (valueChange)="onValueChange($event)"
+                [ngClass]="{'min-pointer-left': isMinValue()}"></ngx-slider>
+        </div>
+
+        <div class="saving_card d-flex flex-column align-items-start p-12 gap-12 p-lg-24 gap-lg-24" *ngIf="cardType=='Sell'">
+            <p class="m-0">Estimated Savings on Agent Commission: <span>${{((value*2.5)/100)| number:'1.0-0'}}</span></p>
+        </div>
+        <div class="saving_card d-flex flex-column align-items-start p-12 gap-12 p-lg-24 gap-lg-24" *ngIf="cardType=='Buy'">
+            <p class="m-0">Your Potential Cashback When Buying a New Home: <span>${{((value*3)/100)*0.90 | number:'1.0-0'}}</span></p>
+            <p class="m-0">Your Potential Cashback When Buying a Old Home: <span>${{((value*3)/100)*0.80 | number:'1.0-0'}}</span></p>
+        </div>
+        <div class="saving_card d-flex flex-column align-items-start p-12 gap-12 p-lg-24 gap-lg-24" *ngIf="cardType=='Sell & Buy'">
+            <p class="m-0">Your total savings (Cashback + commission savings) buying a new home: <span>${{((((value*3)/100)*0.90)+(((value*2.5)/100))) | number:'1.0-0'}}</span></p>
+            <p class="m-0">Your total savings (Cashback + commission savings) buying an old home: <span>${{((((value*3)/100)*0.80) +(((value*2.5)/100))) | number:'1.0-0'}}</span></p>
+        </div>
+
+
+    </section>
+
+</div>

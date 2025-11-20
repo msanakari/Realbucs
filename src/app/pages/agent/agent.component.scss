@@ -1,0 +1,691 @@
+.home_page_upper {
+    position: relative;
+    background-image: url('/assets/home/pattern-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: calc(50% + (25px));
+    z-index: 1;
+    overflow: hidden;
+    padding: 75px 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(179deg, #0153FF 55.28%, #55ACEE 99.54%);
+        z-index: 2;
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
+
+    .container {
+        z-index: 3;
+
+        .banner_text {
+            .title {
+                p {
+                    align-self: stretch;
+                    color: #FFF;
+                    text-align: center;
+                    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                    font-size: 45px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 0.45px;
+                }
+
+                .sub_text {
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 0.24px;
+                    text-shadow: none;
+                }
+            }
+
+            .middle_container {
+                .middle_container_text {
+                    p {
+                        color: #FFF;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 0.24px;
+                    }
+                }
+            }
+
+            button {
+                border-radius: 32px;
+                background: #fff;
+                color: #024FF0;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                border: none;
+            }
+
+            button:hover {
+                background: #E6EDFE;
+            }
+
+            .sub_title {
+                p {
+                    align-self: stretch;
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.24px;
+                }
+            }
+        }
+    }
+}
+
+.faq_container {
+    h4 {
+        color: #070A13;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 44px;
+        letter-spacing: -0.72px;
+    }
+}
+
+.contact_form {
+    .contact_form_top {
+        h4 {
+            color: #000;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.72px;
+        }
+
+        p {
+            color: #64748B;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    form {
+        .contact_form_otpions {
+            .contact_form_otpion_row {
+                .form_option {
+                    flex: 1 0 0;
+
+                    .label {
+                        color: #070A13;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 20px;
+                    }
+
+                    input {
+                        color: #000;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        border-radius: 4px;
+                        border: 1.5px solid #CBD5E1;
+                    }
+
+                    input:focus {
+                        outline: none;
+                    }
+
+                    .intelInput {
+                        border-radius: 4px;
+                        border: 1.5px solid #CBD5E1;
+                    }
+
+                    ::ng-deep {
+                        .iti {
+                            display: flex;
+
+                            .iti__flag-container {
+                                position: relative !important;
+                                padding: 0px 12px 0px 12px !important;
+                                display: flex;
+                                align-items: center;
+
+                                .iti__selected-flag {
+                                    .selected-dial-code {
+                                        color: #000;
+                                        font-size: 16px;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: 24px;
+                                        margin: 0px !important;
+                                    }
+                                }
+
+                                .dropdown-toggle {
+                                    width: fit-content !important;
+                                    padding: 0px !important;
+                                    display: flex !important;
+                                    justify-content: center !important;
+                                    align-items: center !important;
+                                    border-radius: 0px;
+                                    background: #fff !important;
+                                    color: #000;
+                                    max-width: -webkit-fill-available !important;
+                                    max-width: -moz-available;
+                                    gap: 4px;
+                                }
+
+                                .dropdown-toggle:hover {
+                                    background: #fff !important;
+                                }
+
+                                .dropdown-menu {
+                                    max-width: 300px !important;
+                                    min-width: 12rem;
+
+                                    .iti__country-list {
+                                        max-height: 181px !important;
+                                        overflow-y: auto !important;
+                                    }
+                                }
+                            }
+                        }
+
+                        .iti__flag-box {
+                            display: inline-block !important;
+                        }
+
+                        .intelInput input::placeholder {
+                            color: #64748B;
+                        }
+
+                        .intelInput input {
+                            border: none;
+                            background: #fff;
+                            color: #000;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 24px;
+                            width: 100% !important;
+                            padding: 12px 10px 12px 0px !important;
+                            border-radius: 0px 4px 4px 0px;
+                        }
+
+                        .intelInput input:focus {
+                            outline: none;
+                        }
+                    }
+
+                    .dropdown {
+
+                        .dropdown_btn {
+                            border-radius: 6px;
+                            border: 1px solid #CBD5E1;
+                            background: #FFF;
+                            box-shadow: 0 4px 4px 0 rgba(226, 232, 240, 0.25);
+                            transition: transform 0.3s ease;
+                            cursor: pointer;
+
+                            img {
+                                width: 24px;
+                                height: 24px;
+                                transition: all 0.3s ease;
+                                transform: rotate(180deg);
+                            }
+
+                            &[aria-expanded="true"] {
+                                .chevron_down {
+                                    transform: rotate(0deg);
+                                }
+                            }
+
+                            p {
+                                flex: 1 0 0;
+                                color: #64748B;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                                letter-spacing: 0.48px;
+
+                                span {
+                                    border-radius: 3px;
+                                    background: #024FF0;
+                                    color: #fff;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    letter-spacing: 0.48px;
+
+                                    img {
+                                        width: 20px;
+                                        height: 20px;
+
+                                    }
+                                }
+                            }
+
+                            input {
+                                flex: 1 0 0;
+                                color: #000;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                                letter-spacing: 0.48px;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            input:focus {
+                                outline: none;
+                            }
+
+                            .selectedOption {
+                                color: #000;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            width: 100%;
+                            max-height: 215px;
+                            overflow-y: auto;
+                            top: 4px !important;
+                            position: unset !important;
+                            transform: translate(0px, 0px) !important;
+                            border-radius: 6px;
+                            border: 1px solid #CBD5E1;
+                            background: #FFF;
+                            box-shadow: 0 4px 4px 0 rgba(226, 232, 240, 0.25);
+
+                            .dropdown-item {
+                                cursor: pointer;
+
+                                a {
+                                    color: #64748B;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    letter-spacing: 0.48px;
+                                    border-radius: 4px;
+                                    flex: 1 0 0;
+
+                                }
+                            }
+
+                            .dropdown-item:hover {
+                                background: #fff;
+
+                                a:hover {
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .submit_btn {
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.48px;
+            border-radius: 6px;
+            background: #024FF0;
+            height: 44px;
+            border: none;
+            width: 300px;
+        }
+
+        .disabled_btn {
+            background: #e7ecf1 !important;
+            color: #000 !important;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .home_page_upper {
+        padding: 40px 0;
+
+        .container {
+
+            .banner_text {
+                .title {
+                    p {
+                        font-size: 30px;
+                        letter-spacing: 0.3px;
+                    }
+
+                    .sub_text {
+                        font-size: 16px;
+                    }
+                }
+
+                .middle_container {
+                    .middle_container_text {
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                button {
+                    font-size: 14px;
+
+                    svg {
+                        width: 16px;
+                        height: 20px;
+                    }
+                }
+
+                .sub_title {
+                    p {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .faq_container {
+        h4 {
+            font-size: 20px;
+            letter-spacing: -0.4px;
+        }
+    }
+
+    .contact_form {
+        .contact_form_top {
+            h4 {
+                font-size: 20px;
+                letter-spacing: 0.4px;
+                line-height: 30px;
+            }
+
+            p {
+                font-size: 14px;
+                letter-spacing: unset;
+                line-height: 24px;
+            }
+        }
+
+        form {
+            .contact_form_otpions {
+                .contact_form_otpion_row {
+                    .form_option {
+
+                        .label {
+                            color: #070A13;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 20px;
+                        }
+
+                        input {
+                            color: #000;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 24px;
+                            border-radius: 4px;
+                            border: 1.5px solid #CBD5E1;
+                        }
+
+                        input:focus {
+                            outline: none;
+                        }
+
+                        .intelInput {
+                            border-radius: 4px;
+                            border: 1.5px solid #CBD5E1;
+                        }
+
+                        ::ng-deep {
+                            .iti {
+                                display: flex;
+
+                                .iti__flag-container {
+                                    position: relative !important;
+                                    padding: 0px 12px 0px 12px !important;
+                                    display: flex;
+                                    align-items: center;
+
+                                    .iti__selected-flag {
+                                        .selected-dial-code {
+                                            color: #000;
+                                            font-size: 16px;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            line-height: 24px;
+                                            margin: 0px !important;
+                                        }
+                                    }
+
+                                    .dropdown-toggle {
+                                        width: fit-content !important;
+                                        padding: 0px !important;
+                                        display: flex !important;
+                                        justify-content: center !important;
+                                        align-items: center !important;
+                                        border-radius: 0px;
+                                        background: #fff !important;
+                                        color: #000;
+                                        max-width: -webkit-fill-available !important;
+                                        max-width: -moz-available;
+                                        gap: 4px;
+                                    }
+
+                                    .dropdown-toggle:hover {
+                                        background: #fff !important;
+                                    }
+
+                                    .dropdown-menu {
+                                        max-width: 300px !important;
+                                        min-width: 12rem;
+
+                                        .iti__country-list {
+                                            max-height: 181px !important;
+                                            overflow-y: auto !important;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .iti__flag-box {
+                                display: inline-block !important;
+                            }
+
+                            .intelInput input::placeholder {
+                                color: #64748B;
+                            }
+
+                            .intelInput input {
+                                border: none;
+                                background: #fff;
+                                color: #000;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 24px;
+                                width: 100% !important;
+                                padding: 12px 10px 12px 0px !important;
+                                border-radius: 0px 4px 4px 0px;
+                            }
+
+                            .intelInput input:focus {
+                                outline: none;
+                            }
+                        }
+
+                        .dropdown {
+
+                            .dropdown_btn {
+                                border-radius: 6px;
+                                border: 1px solid #CBD5E1;
+                                background: #FFF;
+                                box-shadow: 0 4px 4px 0 rgba(226, 232, 240, 0.25);
+                                transition: transform 0.3s ease;
+                                cursor: pointer;
+
+                                img {
+                                    width: 24px;
+                                    height: 24px;
+                                    transition: all 0.3s ease;
+                                    transform: rotate(180deg);
+                                }
+
+                                &[aria-expanded="true"] {
+                                    .chevron_down {
+                                        transform: rotate(0deg);
+                                    }
+                                }
+
+                                p {
+                                    flex: 1 0 0;
+                                    color: #64748B;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    letter-spacing: 0.48px;
+
+                                    span {
+                                        border-radius: 3px;
+                                        background: #024FF0;
+                                        color: #fff;
+                                        font-size: 16px;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: normal;
+                                        letter-spacing: 0.48px;
+
+                                        img {
+                                            width: 20px;
+                                            height: 20px;
+
+                                        }
+                                    }
+                                }
+
+                                input {
+                                    flex: 1 0 0;
+                                    color: #000;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    letter-spacing: 0.48px;
+                                    border: none;
+                                    cursor: pointer;
+                                }
+
+                                input:focus {
+                                    outline: none;
+                                }
+
+                                .selectedOption {
+                                    color: #000;
+                                }
+                            }
+
+                            .dropdown-menu {
+                                width: 100%;
+                                max-height: 215px;
+                                overflow-y: auto;
+                                top: 4px !important;
+                                position: unset !important;
+                                transform: translate(0px, 0px) !important;
+                                border-radius: 6px;
+                                border: 1px solid #CBD5E1;
+                                background: #FFF;
+                                box-shadow: 0 4px 4px 0 rgba(226, 232, 240, 0.25);
+
+                                .dropdown-item {
+                                    cursor: pointer;
+
+                                    a {
+                                        color: #64748B;
+                                        font-size: 16px;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: normal;
+                                        letter-spacing: 0.48px;
+                                        border-radius: 4px;
+                                        flex: 1 0 0;
+
+                                    }
+                                }
+
+                                .dropdown-item:hover {
+                                    background: #fff;
+
+                                    a:hover {
+                                        color: #000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .submit_btn {
+                font-size: 14px;
+                height: 36px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a6b2c3;
+    border-radius: 10px;
+    border: 2px solid #a6b2c3;
+}

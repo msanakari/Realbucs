@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+@use "bootstrap" as *;
+
+
+$spacers: (
+  new_2:2px,
+  6:6px,
+  9:9px,
+  10:10px,
+  12:12px,
+  16:16px,
+  24:24px,
+  32: 32px,
+  36: 36px,
+  40:40px,
+  46:46px,
+  48:48px,
+  50:50px,
+  60:60px,
+  64:64px,
+  72: 72px,
+  120: 120px,
+);
+
+
+// ✅ Define ONLY padding and margin utilities
+$utilities: (
+  "margin": (property: margin,
+    class: m,
+    values: $spacers ),
+  "padding": (property: padding,
+    class: p,
+    values: $spacers )
+);
+
+@use "bootstrap/scss/bootstrap" with (
+  $spacers: $spacers
+);
+
+
+
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 1440px !important;
+  }
+}
+
+body {
+  font-family: 'Public Sans', sans-serif !important;
+}
+
+app-header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 99;
+  background: white;
+}
+
+
+
+
+
+.mt-85 {
+  margin-top: 85px;
+}
+
+@media (max-width:992px) {
+  .mt-85 {
+    margin-top: 74px;
+  }
+}
+
+@media (max-width:992px) {
+  .mt-85 {
+    margin-top: 68px;
+  }
+}
+
+.ngx-slider {
+  margin: 0px !important;
+  height: 22px !important;
+}
+
+.ngx-slider-bar-wrapper {
+  margin-top: 0px !important;
+}
+
+.ngx-slider-floor {
+  display: none !important;
+}
+
+.ngx-slider-ceil {
+  display: none !important;
+}
+
+.ngx-slider-model-value {
+  display: none !important;
+}
+
+.ngx-slider-active {
+  outline: none !important;
+}
+
+.ngx-slider-bar-wrapper {
+  padding: 0px !important;
+  height: 22px !important;
+}
+
+.ngx-slider-bar {
+  height: 22px !important;
+  border-radius: 17px !important;
+
+}
+
+.ngx-slider-active::after {
+  background-color: #FFF !important;
+}
+
+.ngx-slider-pointer {
+  background-color: #FFF !important;
+  top: -2px !important;
+  border-radius: 17px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.33);
+  width: 27px !important;
+  height: 27px !important;
+}
+
+.min-pointer-left .ngx-slider-pointer {
+  left: -5px !important;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdown-menu{
+  overflow-y: auto;
+}
+
+.skeleton-wrapper {
+  padding: 16px;
+}
+
+.skeleton-title,
+.skeleton-line {
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 20px;
+}
+
+.skeleton-line {
+  width: 100%;
+  height: 14px;
+}
+
+.skeleton-line.short {
+  width: 80%;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}

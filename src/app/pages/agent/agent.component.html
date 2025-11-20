@@ -1,0 +1,157 @@
+<div class="home_page_upper d-flex mt-85">
+    <div class="container px-3 px-lg-72">
+        <div class="banner_text d-flex flex-column gap-24 gap-lg-40 justify-content-center align-items-center">
+            <div class="title d-flex gap-3 flex-column ">
+                <p class="m-0">Are You a Top Real Estate Agent?</p>
+                <p class="m-0 sub_text">Trusted by leading agents to grow their business — join them today.</p>
+            </div>
+
+            <div class="middle_container d-flex flex-column gap-3">
+                <div class="middle_container_text d-flex align-items-center gap-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path
+                            d="M21.5999 12.4999C21.5999 17.8018 17.3018 22.0999 11.9999 22.0999C6.69797 22.0999 2.3999 17.8018 2.3999 12.4999C2.3999 7.19797 6.69797 2.8999 11.9999 2.8999C13.5061 2.8999 14.9313 3.24677 16.1999 3.86498M19.7999 6.4999L11.3999 14.8999L8.9999 12.4999"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="m-0">Receive High-Quality Leads Ready to Buy or Sell</p>
+                </div>
+                <div class="middle_container_text d-flex align-items-center gap-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path
+                            d="M21.5999 12.4999C21.5999 17.8018 17.3018 22.0999 11.9999 22.0999C6.69797 22.0999 2.3999 17.8018 2.3999 12.4999C2.3999 7.19797 6.69797 2.8999 11.9999 2.8999C13.5061 2.8999 14.9313 3.24677 16.1999 3.86498M19.7999 6.4999L11.3999 14.8999L8.9999 12.4999"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="m-0">Elevate Your Real Estate Brand with Quality Listings</p>
+                </div>
+                <div class="middle_container_text d-flex align-items-center gap-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path
+                            d="M21.5999 12.4999C21.5999 17.8018 17.3018 22.0999 11.9999 22.0999C6.69797 22.0999 2.3999 17.8018 2.3999 12.4999C2.3999 7.19797 6.69797 2.8999 11.9999 2.8999C13.5061 2.8999 14.9313 3.24677 16.1999 3.86498M19.7999 6.4999L11.3999 14.8999L8.9999 12.4999"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="m-0">Join for Free - No Upfront Lead Costs</p>
+                </div>
+            </div>
+
+            <div class="sub_title d-flex gap-10 flex-column">
+                <p class="m-0">Find Out if You're Eligible to Join RealBucs's Partner Network</p>
+            </div>
+            <button class="d-flex gap-10 px-3 py-2 align-items-center" (click)="scrollToDetail(contactContainer)">
+                Join RealBucs
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M13.1667 6.5L19 12.5M19 12.5L13.1667 18.5M19 12.5L5 12.5" stroke="#024FF0"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container faq_container py-24 py-md-72 px-lg-72 py-lg-72 d-flex flex-column gap-24 gap-lg-40 align-items-center">
+    <h4 class="m-0">FAQ</h4>
+    <app-faq class="align-self-stretch" [topics]="faqData"></app-faq>
+</div>
+
+<div #contactContainer class="container contact_form px-lg-72 py-lg-72 py-24 d-flex flex-column gap-24 gap-lg-60">
+    <div class="contact_form_top d-flex flex-column gap-3 gap-lg-24 align-items-center justify-content-center">
+        <h4 class="m-0 text-center">Check Your Eligibility to Join RealBucs as a Partner Agent</h4>
+        <p class="m-0 text-center">Provide your details and a RealBucs representative will reach out shortly.</p>
+    </div>
+    <form class="d-flex flex-column align-items-center gap-40 px-lg-72" [formGroup]="contactForm" (ngSubmit)="submitAgentForm()">
+        <div class="contact_form_otpions d-flex flex-column align-self-stretch gap-3 gap-lg-24">
+            <div class="contact_form_otpion_row d-flex flex-column flex-lg-row gap-3 gap-lg-24">
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">First Name*</p>
+                    <input class="px-10 py-2 py-lg-12" formControlName="firstName" type="text"
+                        placeholder="Enter your First Name">
+                </div>
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Last Name*</p>
+                    <input class="px-10 py-2 py-lg-12" formControlName="lastName" type="text"
+                        placeholder="Enter your Last Name">
+                </div>
+            </div>
+            <div class="contact_form_otpion_row d-flex flex-column flex-lg-row gap-3 gap-lg-24">
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Agent ID*</p>
+                    <input class="px-10 py-2 py-lg-12" formControlName="agentId" type="text"
+                        placeholder="Enter your Agent ID">
+                </div>
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Brokerage Company*</p>
+                    <input class="px-10 py-2 py-lg-12" formControlName="brokerageCompany" type="text"
+                        placeholder="Enter your Brokerage Company">
+                </div>
+            </div>
+            <div class="contact_form_otpion_row d-flex flex-column flex-lg-row gap-3 gap-lg-24">
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Email*</p>
+                    <input class="px-10 py-2 py-lg-12" formControlName="email" type="text"
+                        placeholder="Enter your Email">
+                </div>
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Phone Number*</p>
+                    <ngx-intl-tel-input [cssClass]="'custom'" [onlyCountries]="['us']" [enableAutoCountrySelect]="true"
+                        [enablePlaceholder]="true" customPlaceholder="Enter your Phone Number"
+                        [searchCountryFlag]="false" [phoneValidation]="true" name="mobile" [separateDialCode]="true"
+                        [maxLength]="10" formControlName="number" class="intelInput" (input)="onPhoneChange()">
+                    </ngx-intl-tel-input>
+                </div>
+            </div>
+            <div class="contact_form_otpion_row d-flex flex-column flex-lg-row gap-3 gap-lg-24">
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Years of Experience*</p>
+                    <input class="px-10 py-2 py-lg-12" formControlName="experience" type="number"
+                        placeholder="Enter your Years of Experience">
+                </div>
+                <div class="form_option d-flex flex-column gap-1">
+                    <p class="m-0 label">Licensed state/s*</p>
+                    <div class="dropdown d-flex flex-column gap-1">
+                        <div class="dropdown_btn px-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                            [ngClass]="{
+                        'py-10':selectedStates.length>0,
+                        'py-12':selectedStates.length==0
+                    }" aria-expanded="false">
+                            <!-- <input formControlName="state" type="text" placeholder="Select States" readonly> -->
+                            <p #badgeContainer class="m-0 d-flex align-items-center flex-wrap gap-1">
+                                <ng-container *ngIf="selectedStates.length; else placeholder">
+                                    <ng-container *ngFor="let state of visibleStates">
+                                        <span class="badge d-flex align-items-center gap-1 px-2 py-1">
+                                            {{ state }}
+                                            <img src="/assets/modal_close_white.svg" alt="Remove"
+                                                style="cursor: pointer;"
+                                                (click)="removeState(state); $event.stopPropagation();" />
+                                        </span>
+                                    </ng-container>
+
+                                    <span *ngIf="hiddenCount > 0"
+                                        class="badge bg-secondary text-white px-2 py-1 rounded">
+                                        +{{ hiddenCount }} more
+                                    </span>
+                                </ng-container>
+
+                                <ng-template #placeholder>
+                                    Select States
+                                </ng-template>
+                            </p>
+                            <img class="chevron_down" src="/assets/chevron_up.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu py-10 px-2">
+                            <div class="dropdown-item p-10 d-flex align-items-center gap-3" *ngFor="let opt of USStates"
+                                (click)="selectState(opt);$event.stopPropagation()">
+                                <a>{{ opt?.name }}</a>
+                                <img *ngIf="opt?.isSelected" src="/assets/checkbox_selected.svg" alt="">
+                                <img *ngIf="!opt?.isSelected" src="/assets/checkbox_unselected.svg" alt="">
+                            </div>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="submit_btn" [ngClass]="{
+    'disabled_btn':contactForm.invalid
+}" [disabled]="contactForm.invalid" type=" submit">Submit</button>
+    </form>
+</div>
+
+<app-verify-otp *ngIf="openOtpModal" (changeEmail)="changeEmail()" (onClose)="closeOtpModal()" (otpVerified)="handelOtpVerify()" [formId]="contactForm.get('id')?.value" [type]="'AGENT'"></app-verify-otp>

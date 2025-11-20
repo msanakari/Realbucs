@@ -1,0 +1,53 @@
+.container {
+    h3 {
+        color: #154DD4;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.72px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+    }
+
+    .page_container {
+        h4 {
+            color: #000;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+        }
+
+        p {
+            color: #64748B;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        h3 {
+            font-size: 24px;
+            letter-spacing: 0.48px;
+        }
+
+        .page_container {
+            h4 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

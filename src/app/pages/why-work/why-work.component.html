@@ -1,0 +1,84 @@
+<div class="container px-3 px-lg-72 py-24 py-lg-72 d-flex flex-column gap-40 gap-lg-72">
+    <div class="title_top d-flex flex-column align-items-center justify-content-center gap-lg-40 gap-24">
+        <h3 class="text-center m-0"> Why work with RealBucs?</h3>
+        <div class="segement d-flex align-items-center gap-1 p-1">
+            <div class="segment_options px-lg-3 px-0 py-2 d-flex justify-content-center align-item-center" *ngFor="let item of segment" [ngClass]="{
+                'segment_options_selected':selectedSegment==item?.name
+            }" (click)="changeSegment(item?.name)">
+                <p class="m-0">{{item?.name}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="data_div d-flex flex-lg-row flex-column align-items-start gap-24 gap-lg-40" *ngIf="selectedSegment=='Sell'">
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_1.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Streamline your home sale</h4>
+            <p class="m-0 text-center">An agent takes care of the entire process, from prepping your home to finalizing the deal.</p>
+        </div>
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_2.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Unlock your home's full value</h4>
+            <p class="m-0 text-center">Collaborate with an experienced agent to set the right price, market effectively, and maximize your final offer.</p>
+        </div>
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_3.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Faster sales start with the right agent</h4>
+            <p class="m-0 text-center">Experienced agents leverage market knowledge and proven strategies to increase exposure and attract qualified buyers.</p>
+        </div>
+    </div>
+
+     <div class="data_div d-flex flex-lg-row flex-column align-items-start gap-24 gap-lg-40" *ngIf="selectedSegment=='Buy'">
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_4.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Expert support every step of the way</h4>
+            <p class="m-0 text-center">An agent streamlines the home-buying journey, guiding you through each step and helping you avoid common pitfalls.</p>
+        </div>
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_5.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Speed your way to the ideal property</h4>
+            <p class="m-0 text-center">A local expert simplifies your search, reveals hidden gems, and quickly connects you with the perfect home.</p>
+        </div>
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_6.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Boost your purchasing strength</h4>
+            <p class="m-0 text-center">An agent works tirelessly to craft competitive bids, negotiate terms strategically, and ensure you get the most for your investment.</p>
+        </div>
+    </div>
+
+     <div class="data_div d-flex flex-lg-row flex-column align-items-start gap-24 gap-lg-40" *ngIf="selectedSegment=='Sell & Buy'">
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_1.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Unified Selling and Buying Journey</h4>
+            <p class="m-0 text-center">Experience a coordinated process where your sale and purchase work hand-in-hand for a hassle-free move.</p>
+        </div>
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_2.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Maximize Value on Both Ends</h4>
+            <p class="m-0 text-center">Get expert pricing and negotiation for your sale while also securing the best deal on your new home—saving time and money in the process.</p>
+        </div>
+        <div class="data_card d-flex flex-column align-items-center justify-content-center gap-lg-3 gap-2">
+            <div class="icon_div d-flex align-items-center justify-content-center">
+                <img src="/assets/why_work/work_3.svg" alt="">
+            </div>
+            <h4 class="m-0 text-center">Smooth Transitions, Less Stress</h4>
+            <p class="m-0 text-center">Coordinated selling and buying helps you align timelines, reduce overlap, and move confidently from one home to the next.</p>
+        </div>
+    </div>
+</div>

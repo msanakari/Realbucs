@@ -1,0 +1,113 @@
+<div class="mt-85">
+    <div class="banner_div d-flex position-relative">
+        <!-- <img class="banner_img" src="/assets/listing/listing_banner_bg.svg" alt=""> -->
+
+        <div
+            class="container text_div d-flex flex-column justify-content-center position-relative gap-3 z-2 px-3 px-lg-72">
+            <div class="d-flex flex-column">
+                <img class="home_upper" src="/assets/listing/home_upper.svg" alt="">
+                <p class="m-0 title">Property Listings</p>
+            </div>
+            <div class="breadcrum position-absolute d-flex gap-1 px-4 px-lg-24 py-2 py-lg-3 rounded-2">
+                <img class="w-5 h-5" src="/assets/listing/home_icon.svg" alt="">
+                <p class="m-0">Home </p>
+                <img class="w-5 h-5" src="/assets/listing/divider.svg" alt="">
+                <p class="m-0">Property Listing</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-3 px-lg-72 py-40 listing_div">
+        @if (listingData.length==0) {
+        <div class="container d-flex flex-column gap-24 gap-lg-60 ">
+            <div class="skeleton-wrapper">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line short"></div>
+            </div>
+        </div>
+        }
+        @for (item of listingData; track $index) {
+        <div class="listing_card">
+            @if (item?.images.length>0) {
+            <img class="prop_img" [src]="gS.imagePath+item?.images[0]?.image_url"
+                onerror="this.src='/assets/listing/default_img.png'" alt="">
+            }
+            <div class="property_details">
+                <div class="property_header d-flex flex-column gap-6">
+                    <p class="title m-0">{{item?.PropertyTitle}}</p>
+                    @if (item?.PropertyLocation && item?.PropertyType!=='Commercial') {
+                    <div class="location d-flex align-items-center gap-1">
+                        <img class="w-5 h-5" src="/assets/listing/location.svg" alt="">
+                        <p class="m-0">{{item?.PropertyLocation}}</p>
+                    </div>
+                    }
+                    <div class="d-flex fw-bolder align-items-center gap-1">
+                        <img [src]="item?.PropertyType === 'Commercial'? '/assets/comm_prop.svg' : '/assets/residentail_prop.svg'"
+                            alt="{{ item?.PropertyType }}" class="comm_img" />
+                        {{ item?.PropertyType }}
+                    </div>
+                </div>
+                <p class="description m-0" [innerHTML]="item?.PropertyDescription">
+                </p>
+                <p class="price m-0">${{item?.PropertyPrice % 1 === 0?(item?.PropertyPrice |
+                    number:'1.0-0'):item?.PropertyPrice}}</p>
+
+                <!-- @if (item?.PropertyType !== 'Commercial') {
+                <div class="divider d-flex p-1 align-self-stretch">
+                    <p></p>
+                </div>
+                } -->
+                <div class="property_bottom">
+                    @if (item?.PropertyType!=='Commercial') {
+                    <div class="property_bottom_left">
+                        @if (item?.PropertyBedrooms) {
+                        <div class="feature d-flex flex-column align-items-center">
+                            <div class="feature_top d-flex gap-1 align-items-center">
+                                <p class="m-0">{{item?.PropertyBedrooms}}</p>
+                                <img class="w-5 h-5" src="/assets/listing/bed.svg" alt="">
+                            </div>
+                            <p class="m-0">Bedrooms</p>
+                        </div>
+                        }
+
+                        @if (item?.PropertyBathrooms) {
+                        <div class="divider d-flex p-1 align-self-stretch">
+                            <p></p>
+                        </div>
+
+                        <div class="feature d-flex flex-column align-items-center">
+                            <div class="feature_top d-flex gap-1 align-items-center">
+                                <p class="m-0">{{item?.PropertyBathrooms}}</p>
+                                <img class="w-5 h-5" src="/assets/listing/bath.svg" alt="">
+                            </div>
+                            <p class="m-0">Baths</p>
+                        </div>
+                        }
+                        @if (item?.PropertyArea) {
+                        <div class="divider d-flex p-1 align-self-stretch">
+                            <p></p>
+                        </div>
+                        <div class="feature d-flex flex-column align-items-center">
+                            <div class="feature_top d-flex gap-1 align-items-center">
+                                <p class="m-0">{{item?.PropertyArea}} sq ft</p>
+                                <img class="w-5 h-5" src="/assets/listing/area_sq.svg" alt="">
+                            </div>
+                            <p class="m-0">Area</p>
+                        </div>
+                        }
+                    </div>
+                    }
+                    <div class="property_bottom_right d-flex align-items-center justify-content-end gap-12">
+                        <!-- <button class="more_info">More Info</button> -->
+                        <button class="enqure_now" (click)="gS.navigate(`details/${item?.id}`)">More Details</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+
+</div>

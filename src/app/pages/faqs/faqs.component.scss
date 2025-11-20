@@ -1,0 +1,25 @@
+.faq_container {
+    h4 {
+        color: #024FF0;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.72px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+    }
+}
+
+@media (max-width:768px) {
+    .faq_container {
+        h4 {
+            font-size: 24px;
+            letter-spacing: -0.4px;
+        }
+    }
+}

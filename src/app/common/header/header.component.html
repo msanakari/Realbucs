@@ -1,0 +1,47 @@
+<div class="container py-3 px-sm-3 px-md-36 px-lg-72">
+  <nav class="navbar navbar-expand-lg navbar-light p-0 justify-content-between">
+    <div class="container-fluid  align-items-center justify-content-start p-0">
+      <button class="btn d-lg-none p-0 pe-10" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+        aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="brand_logo d-flex align-items-center gap-10 " routerLink="/">
+        <img src="/assets/home/logo_6.svg" alt="">
+        <!-- <p class="brand_name m-0">RealBucs</p> -->
+      </div>
+
+      <div class="collapse navbar-collapse d-none d-lg-flex">
+        <ul class="navbar-nav ms-auto d-flex gap-24">
+          <li class="nav-item" *ngFor="let item of headerOptions">
+            <a class="nav-link p-0 py-2"
+              routerLink="{{item?.route}}" [ngClass]="{
+                'selectedRoute':gS.activeRoute==item?.route
+              }">{{item?.name}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileMenu"
+    aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header justify-content-start gap-10">
+      <img src="/assets/home/close_black.svg" alt="" class="close_img" data-bs-dismiss="offcanvas" aria-label="Close">
+      <div class="brand_logo d-flex align-items-center gap-10 ">
+        <img src="/assets/home/logo_6.svg" alt="">
+        <!-- <p class="brand_name m-0">RealBucs</p> -->
+      </div>
+    </div>
+    <div class="offcanvas-body py-24 px-0">
+      <div class="offcanvas_div d-flex gap-1 flex-column">
+        <div class="offcanvas_option  d-flex gap-1 flex-column" *ngFor="let item of headerOptions; let i=index;" routerLink="{{item?.route}}">
+          <p class="m-0 px-3 py-12" data-bs-toggle="offcanvas">{{item?.name}}</p>
+          <div class="divider py-1" *ngIf="(i+1)!==headerOptions?.length">
+            <p class="m-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

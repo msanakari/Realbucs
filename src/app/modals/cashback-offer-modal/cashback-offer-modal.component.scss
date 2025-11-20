@@ -1,0 +1,140 @@
+.modal-wrapper-design {
+    width: 100%;
+    height: 100%;
+    z-index: 99997;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* So it doesn't block clicks */
+    z-index: -1;
+}
+
+.modal-wrapper-design {
+    padding: 16px;
+}
+
+.employer-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.employer-box {
+    scrollbar-width: none;
+}
+
+.employer-box::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.employer-box {
+    position: relative;
+    max-width: 1110px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 0px;
+    max-height: 100%;
+    overflow-y: scroll;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-custom {
+    max-width: 1110px;
+    border-radius: 16px;
+    margin: auto;
+
+    .gradient-box {
+        background: linear-gradient(to left,
+                #ffdf80,
+                #ffb347 35%);
+    }
+
+    .close_mob {
+        display: block;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .close_web {
+
+        display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    .highlight-bar {
+        width: 85px;
+        height: 4px;
+        background: #ffb347;
+        border-radius: 4px;
+    }
+
+    .modal-img {
+        height: 100%;
+    }
+
+    .percent-text {
+        font-size: 2.5rem;
+
+        @media (min-width: 768px) {
+            font-size: 3.5rem;
+        }
+    }
+
+    .cashback-text {
+        font-size: 2rem;
+
+        @media (min-width: 768px) {
+            font-size: 3rem;
+        }
+    }
+
+    .small-mobile-text {
+        @media (max-width: 576px) {
+            font-size: 0.95rem;
+        }
+    }
+
+    .modal-content-box {
+        padding: 3rem 2rem !important;
+
+        @media (max-width: 576px) {
+            padding: 1.5rem !important;
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    .modal-img {
+        @media (max-width: 576px) {
+            // max-width: 70%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .gradient-box {
+            padding: 1rem !important;
+            justify-content: center !important;
+        }
+    }
+}

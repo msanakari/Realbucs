@@ -1,0 +1,90 @@
+<div class="container mt-85  d-flex justify-content-center">
+    <form [formGroup]="prefrenceForm" (ngSubmit)="submitPrefrence()">
+        <div class="flow_container px-lg-72 pt-lg-72 pb-lg-24 py-36  d-flex flex-column gap-24 gap-lg-40">
+
+            <h4 class="m-0">Set Your Service Preferences</h4>
+            <div class="prefrence_container_main d-flex flex-column gap-24">
+                <div class="prefrence_container d-flex flex-column gap-2">
+                    <p class="label m-0">Type of Property</p>
+                    <div class="dropdown d-flex flex-column gap-1">
+                        <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <input formControlName="propertyType" type="text"
+                                placeholder="Select Type of Property" readonly>
+                            <img src="/assets/chevron_up.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu py-10 px-2">
+                            <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':prefrenceForm.get('propertyType')?.value==item.name
+                    }" *ngFor="let item of propertyType" (click)="selectValue('propertyType',item?.name)">
+                                {{ item?.name }}
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prefrence_container d-flex flex-column gap-2" *ngIf="prefrenceForm.get('propertyType')?.value">
+                    <p class="label m-0">Service Preferences</p>
+                    <div class="dropdown d-flex flex-column gap-1">
+                        <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <input formControlName="prefrenceType" type="text"
+                                placeholder="Select your Service Preferences" readonly>
+                            <img src="/assets/chevron_up.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu py-10 px-2">
+                            <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':prefrenceForm.get('prefrenceType')?.value==item.name
+                    }" *ngFor="let item of prefrenceType" (click)="selectValue('prefrenceType',item?.name)">
+                                {{ item?.name }}
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div *ngIf="prefrenceForm.get('prefrenceType')?.value=='Buying Only' || prefrenceForm.get('prefrenceType')?.value=='Both'"
+                    class="prefrence_container d-flex flex-column gap-2">
+                    <p class="label m-0">Cashback to Buyer</p>
+                    <div class="dropdown d-flex flex-column gap-1">
+                        <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <input formControlName="cashbackBuyer" type="text"
+                                placeholder="How much cashback would you like to pay to the buyer?" readonly>
+                            <img src="/assets/chevron_up.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu py-10 px-2">
+                            <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':prefrenceForm.get('cashbackBuyer')?.value==item.name
+                    }" *ngFor="let item of buyerCashback" (click)="selectValue('cashbackBuyer',item?.name)">
+                               {{ item?.name }}
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div *ngIf="prefrenceForm.get('prefrenceType')?.value=='Selling Only' || prefrenceForm.get('prefrenceType')?.value=='Both'"
+                    class="prefrence_container d-flex flex-column gap-2">
+                    <p class="label m-0">Agent Commission</p>
+                    <div class="dropdown d-flex flex-column gap-1">
+                        <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <input formControlName="agentCommission" type="text"
+                                placeholder="How much commission would you like to take as an agent?" readonly>
+                            <img src="/assets/chevron_up.svg" alt="">
+                        </div>
+                        <ul class="dropdown-menu py-10 px-2">
+                            <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':prefrenceForm.get('agentCommission')?.value==item.name
+                    }" *ngFor="let item of agentCommission" (click)="selectValue('agentCommission',item?.name)">
+                                {{ item?.name }}
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- {{prefrenceForm.value | json}} -->
+            <button *ngIf="prefrenceForm.get('prefrenceType')?.value" class="submit_btn d-flex gap-10 align-items-center justify-content-center" [ngClass]="{
+                        'disabled_btn':prefrenceForm.invalid
+                    }" [disabled]="prefrenceForm.invalid">
+                <p class="m-0">Submit</p>
+            </button>
+        </div>
+    </form>
+</div>

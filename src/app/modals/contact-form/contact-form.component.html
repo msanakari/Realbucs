@@ -1,0 +1,45 @@
+<div id="viewProposal" class="modal-wrapper-design">
+    <div class="employer-box">
+        <div class="archived_modal d-flex flex-column align-items-start justify-content-start px-24 pb-36 pt-36 p-lg-36 gap-24 gap-lg-40">
+            <div class="close_btn_div">
+                <button type="button" class="new_close_btn p-0" (click)="close()">
+                    <img src="../../../assets/modal_close.svg">
+                </button>
+            </div>
+            <div class="modal_title d-flex flex-column gap-2 gap-lg-3">
+                <p class="m-0 modal_title_text">Enter Your Contact Details to Proceed</p>
+                <p class="m-0 modal_title_subtext">Your information will help us provide a personalized experience and
+                    ensure the right agent reaches out.</p>
+            </div>
+
+            <form [formGroup]="contactForm" (ngSubmit)="saveDetails()" class="align-self-stretch d-flex flex-column gap-24 gap-lg-40">
+                <div class="form_options d-flex flex-column gap-3">
+                    <div class="form_option d-flex flex-column gap-1">
+                        <p class="m-0 label">First Name*</p>
+                        <input class="px-10 py-2 py-lg-12" formControlName="firstName" type="text" placeholder="Enter your First Name">
+                    </div>
+                    <div class="form_option d-flex flex-column gap-1">
+                        <p class="m-0 label">Last Name*</p>
+                        <input class="px-10 py-2 py-lg-12" formControlName="lastName" type="text" placeholder="Enter your Last Name">
+                    </div>
+                    <div class="form_option d-flex flex-column gap-1">
+                        <p class="m-0 label">Email*</p>
+                        <input class="px-10 py-2 py-lg-12" formControlName="email" type="email" placeholder="Enter your Email">
+                    </div>
+                    <div class="form_option d-flex flex-column gap-1">
+                        <p class="m-0 label">Phone Number*</p>
+                        <ngx-intl-tel-input [cssClass]="'custom'" [onlyCountries]="['us']"
+                            [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+                            customPlaceholder="Enter Mobile Number" [searchCountryFlag]="false" [phoneValidation]="true"
+                            name="mobile" [separateDialCode]="true" [maxLength]="10" formControlName="number" class="intelInput" (input)="onPhoneChange()">
+                        </ngx-intl-tel-input>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="contactForm.invalid" [ngClass]="{
+                        'disabled_btn':contactForm.invalid
+                    }">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>

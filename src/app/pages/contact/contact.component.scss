@@ -1,0 +1,95 @@
+.container {
+    min-height: 600px;
+    .page_title {
+
+        h3 {
+            color: #154DD4;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.72px;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: none;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+        }
+
+        p {
+            color: #64748B;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+    }
+
+    .contact_cards {
+        width: 808px;
+
+        .contact_card {
+            border-radius: 8px;
+            background: #E6EDFE;
+            flex: 1 0 0;
+
+            img {
+                width: 77.13px;
+                height: 72px;
+                flex-shrink: 0;
+            }
+
+            .contact_card_right {
+
+                h5 {
+                    color: var(--Black, #000);
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 32px;
+                }
+
+                a {
+                    color: #024FF0;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        min-height: unset;
+        .page_title {
+
+            h3 {
+                font-size: 24px;
+                letter-spacing: 0.48px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .contact_cards {
+            width: 100%;
+
+            .contact_card {
+                align-self: stretch;
+
+                .contact_card_right {
+
+                    h5 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

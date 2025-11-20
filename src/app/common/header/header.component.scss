@@ -1,0 +1,226 @@
+.container {
+    .navbar {
+        .container-fluid {
+            .btn {
+                span {
+                    background-image: url(/assets/home/menu_icon.svg);
+                }
+            }
+
+            .btn:focus {
+                box-shadow: none;
+            }
+
+            .brand_logo {
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 53px;
+                }
+
+                p {
+                    font-size: 45px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: 1.35px;
+                    background: linear-gradient(270deg, #0153FF 0.13%, #55ACEE 99.87%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+
+            .navbar-collapse {
+                .navbar-nav {
+                    li {
+                        a {
+                            color: #64748B;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            letter-spacing: 0.54px;
+                            transition: all 0.3s ease;
+                        }
+
+                        a:hover {
+                            color: #024FF0;
+                        }
+
+                        .selectedRoute{
+                            color: #024FF0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #mobileMenu {
+        width: 100%;
+        border: 0px;
+        transition: all 0.4s ease;
+
+        .offcanvas-header {
+            box-shadow: 0 10px 20px 0 rgba(148, 163, 184, 0.20);
+            border-bottom: 1px solid #E2E8F0;
+
+            .brand_logo {
+                cursor: pointer;
+
+                img {
+                    width: 85%;
+                    height: 36px;
+                }
+
+                p {
+                    font-size: 36px;
+                    letter-spacing: 0.72px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    background: linear-gradient(270deg, #0153FF 0.13%, #55ACEE 99.87%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .offcanvas_div {
+            .offcanvas_option {
+                p {
+                    color: #000;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                }
+
+                .divider{
+                    p{
+                        background: #E2E8F0;
+                        width: 100%;
+                        height: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        .navbar {
+            .container-fluid {
+                .brand_logo {
+                    cursor: pointer;
+
+                    img {
+                        width: 85%;
+                        height: 36px;
+                    }
+
+                    p {
+                        font-size: 36px;
+                        letter-spacing: 0.72px;
+                    }
+                }
+
+                .navbar-collapse {
+                    .navbar-nav {
+                        li {
+                            a {
+                                color: #64748B;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                                letter-spacing: 0.54px;
+                                transition: all 0.3s ease;
+                            }
+
+                            a:hover {
+                                color: #024FF0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        .navbar {
+            .container-fluid {
+                .brand_logo {
+                    cursor: pointer;
+
+                    img {
+                        width: 85%;
+                        height: 36px;
+                    }
+
+                    p {
+                        font-size: 24px;
+                        letter-spacing: 0.72px;
+                    }
+                }
+
+                .navbar-collapse {
+                    .navbar-nav {
+                        li {
+                            a {
+                                color: #64748B;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                                letter-spacing: 0.54px;
+                                transition: all 0.3s ease;
+                            }
+
+                            a:hover {
+                                color: #024FF0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #mobileMenu {
+            width: 100%;
+            border: 0px;
+            transition: all 0.4s ease;
+
+            .offcanvas-header {
+
+                .brand_logo {
+
+                    img {
+                        width: 85%;
+                        height: 36px;
+                    }
+
+                    p {
+                        font-size: 24px;
+                        letter-spacing: 0.72px;
+                    }
+                }
+            }
+
+            .offcanvas_div {
+            .offcanvas_option {
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+        }
+    }
+}

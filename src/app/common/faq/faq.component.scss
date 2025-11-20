@@ -1,0 +1,103 @@
+.accordion {
+    .main_div {
+        h4 {
+            color: #000;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+        }
+
+        .accordion-items {
+
+
+            .accordion-item {
+                border-radius: 8px;
+                border: 1px solid #E2E8F0;
+                background: #FFF;
+                box-shadow: 0 10px 20px 0 rgba(148, 163, 184, 0.20);
+
+                h2 {
+                    button {
+                        box-shadow: none;
+                        color: #000;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 32px;
+                    }
+
+
+                    button:not(.collapsed) {
+                        background-color: #fff;
+                        color: #000;
+                    }
+
+                    button::after {
+                        background-image: url(/assets/plus_faq.svg);
+                    }
+
+                    button:not(.collapsed)::after {
+                        background-image: url(/assets/minus_faq.svg);
+
+                    }
+                }
+
+                .accordion-collapse {
+                    .accordion-body {
+                        padding: 16px 0px 0px 0px;
+
+                        p {
+                            color: #64748B;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 30px;
+                            white-space: pre-line;
+                        }
+
+                        .increase_line_height {
+                            line-height: 42px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .accordion {
+        .main_div {
+            h4 {
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+            .accordion-items {
+                .accordion-item {
+
+                    h2 {
+                        button {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .accordion-collapse {
+                        .accordion-body {
+
+                            p {
+                                font-size: 16px;
+                            }
+
+                            .increase_line_height {
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

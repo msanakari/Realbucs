@@ -1,0 +1,162 @@
+<!-- Old Hero Section -->
+<div class="home_page_upper d-flex mt-85 d-none" [ngClass]="{
+    'home_page_upper_sell':selectedSegment?.name=='Sell',
+    'home_page_upper_buy':selectedSegment?.name=='Buy',
+    'home_page_upper_sellBuy':selectedSegment?.name=='Sell & Buy'
+}">
+    <div class="container px-3 px-lg-72">
+        <div class="banner_text d-flex flex-column gap-40 justify-content-center align-items-center">
+            <div class="title d-flex gap-10 flex-column ">
+                <p class="m-0" *ngFor="let item of selectedSegment?.title">{{item}}</p>
+            </div>
+            <div class="segment_div d-flex p-6 align-items-start gap-1">
+                <div class="chip px-12 p-mdy-4 py-6 d-flex align-self-stretch align-items-center justify-content-center gap-10"
+                    [ngClass]="{
+                    'selecetdChip':item?.selected
+                }" *ngFor="let item of segment" (click)="changeSegment(item)">
+                    <p class="m-0">{{item?.name}}</p>
+                </div>
+            </div>
+            <div class="search_div d-flex align-items-center align-self-stretch justify-content-center">
+                <div class="d-flex align-items-center align-self-stretch gap-10 p-2 ps-md-24 ps-12 ">
+                    <input type="number" placeholder="Enter your zip code">
+                    <button class="d-flex gap-10 px-3 py-2 align-items-center" (click)="getStarted()">
+                        Get Started
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M13.1667 6.5L19 12.5M19 12.5L13.1667 18.5M19 12.5L5 12.5" stroke="white"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </div>
+
+            </div>
+            <div class="sub_title d-flex gap-10 flex-column">
+                <p class="m-0" *ngFor="let item of selectedSegment?.subTitle">{{item}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--New Hero section -->
+<div
+    class="home_page_upper_new d-flex flex-column align-items-center justify-content-center mt-85 gap-32 gap-lg-40 px-3 px-lg-72">
+    <div class="title d-flex gap-10 flex-column ">
+        <p class="m-0" *ngFor="let item of selectedSegment?.title">{{item}}</p>
+    </div>
+    <div class="option_div_main d-flex flex-column align-items-center gap-24">
+        <div class="segment_div d-flex p-6 align-items-start gap-1">
+            <div class="chip px-12 p-mdy-4 py-6 d-flex align-self-stretch align-items-center justify-content-center gap-10"
+                [ngClass]="{
+                    'selecetdChip':item?.selected
+                }" *ngFor="let item of segment" (click)="changeSegment(item)">
+                <p class="m-0">{{item?.name}}</p>
+            </div>
+        </div>
+        <div class="search_div d-flex align-items-center align-self-stretch justify-content-center gap-2 gap-lg-12">
+            <div class="d-flex align-items-center align-self-stretch gap-10 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                        d="M16.6666 8.33268C16.6666 12.4935 12.0508 16.8268 10.5008 18.1652C10.3564 18.2738 10.1806 18.3325 9.99998 18.3325C9.81931 18.3325 9.64354 18.2738 9.49915 18.1652C7.94915 16.8268 3.33331 12.4935 3.33331 8.33268C3.33331 6.56457 4.03569 4.86888 5.28593 3.61864C6.53618 2.36839 8.23187 1.66602 9.99998 1.66602C11.7681 1.66602 13.4638 2.36839 14.714 3.61864C15.9643 4.86888 16.6666 6.56457 16.6666 8.33268Z"
+                        stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M10 10.834C11.3807 10.834 12.5 9.7147 12.5 8.33398C12.5 6.95327 11.3807 5.83398 10 5.83398C8.61929 5.83398 7.5 6.95327 7.5 8.33398C7.5 9.7147 8.61929 10.834 10 10.834Z"
+                        stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input type="number" placeholder="Enter your zip code">
+
+            </div>
+            <button class="d-flex gap-1 gap-lg-10 px-lg-3 py-2 align-items-center" (click)="getStarted()">
+                Get Started
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M13.1667 6.5L19 12.5M19 12.5L13.1667 18.5M19 12.5L5 12.5" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+
+        </div>
+    </div>
+    <div class="sub_title d-flex gap-10 flex-column">
+        <p class="m-0" *ngFor="let item of selectedSegment?.subTitle">{{item}}</p>
+    </div>
+</div>
+
+<div class="container pt-lg-72 pt-24 d-flex align-items-center justify-content-center d-none" *ngIf="cashbackData">
+    <div class="cashback_card d-flex flex-column align-items-center justify-content-center pt-24 px-4 pt-lg-36 gap-10">
+        <h3>Total Cashback Paid to Our Customers</h3>
+        <p>$ {{cashbackData?.value?(cashbackData?.value | number:'1.0-0'):0}} and counting...</p>
+        <img src="../../../assets/saving_hand_2.png" alt="">
+    </div>
+</div>
+
+<!-- new cashback card -->
+<div class="container position-relative py-24 py-lg-72 px-16 px-lg-72  d-flex align-items-center justify-content-center"
+    >
+    <div class="cashback_card_new d-flex flex-column gap-36 gap-lg-40 align-items-center align-self-stretch py-24 px-16 p-lg-40">
+        <div class="cashback_card_new_top d-flex flex-column align-items-center align-self-stretch gap-24">
+            <div class="blue_div d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                    <path d="M15.1666 4.66602L9.49998 10.3327L6.16665 6.99935L1.83331 11.3327" stroke="#FFC105"
+                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M11.1667 4.66602H15.1667V8.66602" stroke="#0153FF" stroke-width="1.33333"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="m-0">Our Success Story</p>
+            </div>
+            <h4 class="m-0">Total Cashback Paid to <br>Our Customers</h4>
+        </div>
+        <div class="cashback_card_new_middle d-flex flex-column gap-16 align-items-center align-self-stretch">
+            <div class="middle_top d-flex align-items-center justify-content-center gap-2">
+                <p class="m-0">$ {{cashbackData?.value?(animatedValue | number:'1.0-0'):0}}</p>
+            </div>
+            <p class="m-0 subtitle">and counting...</p>
+        </div>
+        <div class="divider_middle"></div>
+        <div class="dollar_div d-flex align-items-center justify-content-center gap-24">
+            @for (item of [0,1,2,3,4]; track $index) {
+            <div class="dollar_box d-flex align-items-center justify-content-center">
+                <p class="m-0">$</p>
+            </div>
+            }
+        </div>
+        <div class="cashback_card_new_bottom d-flex align-items-center justify-content-center gap-16">
+            <!-- <div class="bottom_left d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                        d="M13.3334 17.5V15.8333C13.3334 14.9493 12.9822 14.1014 12.357 13.4763C11.7319 12.8512 10.8841 12.5 10 12.5H5.00002C4.11597 12.5 3.26812 12.8512 2.643 13.4763C2.01788 14.1014 1.66669 14.9493 1.66669 15.8333V17.5"
+                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M7.50002 9.16667C9.34097 9.16667 10.8334 7.67428 10.8334 5.83333C10.8334 3.99238 9.34097 2.5 7.50002 2.5C5.65907 2.5 4.16669 3.99238 4.16669 5.83333C4.16669 7.67428 5.65907 9.16667 7.50002 9.16667Z"
+                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M18.3333 17.4991V15.8324C18.3328 15.0939 18.0869 14.3764 17.6345 13.7927C17.182 13.209 16.5484 12.7921 15.8333 12.6074"
+                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M13.3333 2.60742C14.0503 2.79101 14.6858 3.20801 15.1397 3.79268C15.5935 4.37735 15.8398 5.09645 15.8398 5.83659C15.8398 6.57673 15.5935 7.29582 15.1397 7.8805C14.6858 8.46517 14.0503 8.88217 13.3333 9.06576"
+                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="m-0">5,000+ Happy Buyers</p>
+            </div>
+            <div class="bottom_divider"></div> -->
+            <div class="bottom_right d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                    <path d="M15.1666 4.66602L9.49998 10.3327L6.16665 6.99935L1.83331 11.3327" stroke="#FFC105"
+                        stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M11.1667 4.66602H15.1667V8.66602" stroke="#0153FF" stroke-width="1.33333"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p class="m-0">Growing Every Day</p>
+            </div>
+        </div>
+    </div>
+    <div class="blue_gradient"></div>
+     <div class="yellow_gradient"></div>
+</div>
+
+<app-slider [cardType]="selectedSegment?.name"></app-slider>
+<app-why-work></app-why-work>
+
+<div class="container faq_container py-24 px-lg-72 py-lg-72 d-flex flex-column gap-24 gap-lg-40 align-items-center">
+    <h4 class="m-0">FAQ</h4>
+    <app-faq class="align-self-stretch" [topics]="faqData"></app-faq>
+</div>
+
+<app-cashback-offer-modal *ngIf="!gS.isWebsiteOpen" (onClose)="closeCashbackModal()"></app-cashback-offer-modal>

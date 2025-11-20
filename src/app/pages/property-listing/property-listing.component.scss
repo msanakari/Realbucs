@@ -1,0 +1,356 @@
+.banner_div {
+    background: linear-gradient(90deg,
+            rgba(0, 14, 44, 0.40) 32.39%,
+            rgba(2, 27, 81, 0.00) 99.88%);
+    background-image: url('/assets/listing/listing_banner_bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    width: 100%;
+
+    .banner_img {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 0;
+        object-fit: cover;
+    }
+
+    .text_div {
+
+
+        .home_upper {
+            width: 80px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .title {
+            color: #FFF;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .breadcrum {
+            background: #C39D07;
+            width: 50%;
+            bottom: -25px;
+
+            p {
+                color: #FFF;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.comm_img {
+    width: 18px;
+}
+
+.banner_div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(0, 14, 44, 0.40) 32.39%,
+            rgba(2, 27, 81, 0.00) 99.88%);
+    z-index: 1;
+}
+
+.listing_div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+    .listing_card {
+        display: flex;
+        padding: 20px;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+        border-radius: 8px;
+        background: #FFF;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+
+
+        .prop_img {
+            width: 360px;
+            align-self: stretch;
+            aspect-ratio: 3/2;
+            border-radius: 8px;
+        }
+
+        .property_details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            flex: 1 0 0;
+
+            .property_header {
+
+                .title {
+                    overflow: hidden;
+                    color: #000;
+                    text-overflow: ellipsis;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    align-self: stretch;
+                }
+
+                .location {
+
+                    p {
+                        color: #000;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+            }
+
+            .description {
+                overflow: hidden;
+                color: #666;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.14px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                align-self: stretch;
+            }
+
+            .price {
+                color: #0153FF;
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+
+            .divider {
+                p {
+                    background: #d6d6d6;
+                    height: 1px;
+                    width: 100%;
+                }
+            }
+
+            .property_bottom {
+                display: flex;
+                align-items: flex-start;
+                gap: 40px;
+                align-self: stretch;
+
+                .property_bottom_left {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex: 1 0 0;
+
+                    .feature {
+
+                        p {
+                            color: #666;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: normal;
+                        }
+
+                        .feature_top {
+                            p {
+                                color: #000;
+                                font-size: 18px;
+                                font-weight: 500;
+                            }
+                        }
+
+
+                    }
+
+                    .divider {
+                        p {
+                            background: #d6d6d6;
+                            width: 1px;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .property_bottom_right {
+                    flex: 1 0 0;
+
+                    button {
+                        padding: 12px 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+                        border-radius: 8px;
+                        width: 160px;
+                    }
+
+                    .more_info {
+                        color: #0153FF;
+                        border: 1px solid #0153FF;
+
+                        background: #FFF;
+                    }
+
+                    .enqure_now {
+                        color: #FFF;
+                        border: 1px solid #EEBF05;
+                        background: #EEBF05;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .banner_div {
+        height: 120px;
+
+        .text_div {
+            .home_upper {
+                width: 40px;
+                height: 20px;
+                flex-shrink: 0;
+            }
+
+            .title {
+                font-size: 24px;
+
+            }
+
+            .breadcrum {
+                width: calc(100% - (32px));
+                bottom: -18px;
+
+                p {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .listing_div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+
+        .listing_card {
+            flex-direction: column;
+            padding: 16px;
+
+
+            .prop_img {
+                width: 100%;
+                height: 140px;
+            }
+
+            .property_details {
+                gap: 16px;
+                align-self: stretch;
+
+                .property_header {
+                    align-self: stretch;
+
+                    .title {
+                        font-size: 16px;
+                    }
+
+                    .location {
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .divider {
+                    p {
+                        margin: 0px;
+                    }
+                }
+
+                .price {
+                    font-size: 20px;
+                }
+
+                .property_bottom {
+                    flex-direction: column;
+                    gap: 24px;
+                    align-self: stretch;
+
+                    .property_bottom_left {
+                         align-self: stretch;
+
+                        .feature {
+
+                            p {
+                                color: #666;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 300;
+                                line-height: normal;
+                            }
+
+                            .feature_top {
+                                p {
+                                    color: #000;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                }
+                            }
+
+
+                        }
+
+                        .divider {
+                            p {
+                                background: #d6d6d6;
+                                width: 1px;
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                    .property_bottom_right {
+                        align-self: stretch;
+
+                        button {
+                            padding: 6px 14px;
+                            width: 100%;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

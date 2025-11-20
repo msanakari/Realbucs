@@ -1,0 +1,172 @@
+<div class="container px-lg-120 py-lg-40 py-24 d-flex flex-column gap-24 gap-lg-60 mt-85" *ngIf="!propertyData">
+    <div class="skeleton-wrapper">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+    </div>
+</div>
+
+<div class="container px-lg-120 py-lg-40 py-24 d-flex flex-column gap-24 gap-lg-60 mt-85" *ngIf="propertyData">
+
+    @if (propertyData?.images.length>0) {
+    <div class="swiper_div d-flex flex-column gap-6">
+        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
+            thumbs-swiper=".mySwiper2" space-between="10" navigation="true">
+            @for (item of propertyData?.images; track $index) {
+            <swiper-slide>
+                <img [src]="gS.imagePath +item?.image_url" class="w-full" />
+            </swiper-slide>
+            }
+        </swiper-container>
+
+        <swiper-container class="mySwiper2" space-between="10" slides-per-view="4" free-mode="true"
+            watch-slides-progress="true">
+            @for (item of propertyData?.images; track $index) {
+            <swiper-slide>
+                <img [src]="gS.imagePath +item?.image_url" class="" />
+            </swiper-slide>
+            }
+        </swiper-container>
+    </div>
+    }
+
+    <div class="property_details">
+        <div class="details_div">
+            <div class="detail_top">
+
+                @if (propertyData?.PropertyLocation && propertyData?.PropertyType!=='Commercial') {
+                <div class="location">
+                    <img src="/assets/listing/location_2.svg" alt="">
+                    <p class="m-0">{{propertyData?.PropertyLocation}}</p>
+                </div>
+                }
+                <div class="top_details">
+                    <h4 class="m-0">{{propertyData?.PropertyTitle}}</h4>
+                    <div class="d-flex fw-bolder align-items-center gap-1">
+                        <img [src]="propertyData?.PropertyType === 'Commercial'? '/assets/comm_prop.svg' : '/assets/residentail_prop.svg'"
+                            alt="{{ propertyData?.PropertyType }}" class="comm_img" />
+                        {{ propertyData?.PropertyType }}
+                    </div>
+                    <p class="m-0">${{propertyData?.PropertyPrice % 1 === 0?(propertyData?.PropertyPrice |
+                        number:'1.0-0'):propertyData?.PropertyPrice}}</p>
+                </div>
+            </div>
+            @if (propertyData?.PropertyType!=='Commercial') {
+            <div class="property_ammenties">
+                @if (propertyData?.PropertyBedrooms) {
+                <div class="otpions">
+                    <img src="/assets/listing/bed_yellow.svg" alt="">
+                    <p class="count m-0">{{propertyData?.PropertyBedrooms}}</p>
+                    <p class="text m-0">Bedrooms</p>
+                </div>
+                }
+
+                @if (propertyData?.PropertyBathrooms) {
+                <div class="otpions">
+                    <img src="/assets/listing/bath_yellow.svg" alt="">
+                    <p class="count m-0">{{propertyData?.PropertyBathrooms}}</p>
+                    <p class="text m-0">Bathrooms</p>
+                </div>
+                }
+                @if (propertyData?.PropertyArea) {
+                <div class="otpions">
+                    <img src="/assets/listing/area_yellow.svg" alt="">
+                    <p class="count m-0">{{propertyData?.PropertyArea}}</p>
+                    <p class="text m-0">sq ft</p>
+                </div>
+                }
+                @if (propertyData?.PropertyYearBuilt) {
+                <div class="otpions">
+                    <img src="/assets/listing/date_yellow.svg" alt="">
+                    <p class="count m-0">{{propertyData?.PropertyYearBuilt}}</p>
+                    <p class="text m-0">Year Built</p>
+                </div>
+                }
+            </div>
+            }
+
+            <div class="property_desc">
+                <h4 class="m-0">Property Description</h4>
+                <p class="m-0" [innerHTML]="propertyData?.PropertyDescription"></p>
+                <!-- <textarea style="height: fit-content;" name="descp" id="descp" readonly >{{propertyData?.PropertyDescription}}</textarea> -->
+            </div>
+
+            @if (propertyData?.documents && propertyData?.documents.length>0) {
+            <div class="property_docs_main">
+                <h4>Documents</h4>
+                <div class="property_docs">
+                    @for (item of propertyData?.documents; track $index) {
+                    <div class="docs_wrapper" (click)="viewDocument(gS.imagePath + item?.PropertyDocuments)  ">
+                        <p class="m-0">{{item?.PropertyDocuments}}</p>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+        <div class="contact_form">
+
+            <div *ngIf="isContactFormDetails" class="form_header">
+                <p class="m-0">Interested in this property?</p>
+                <p class="m-0">Contact us for more information or to schedule a viewing</p>
+            </div>
+
+            <form *ngIf="isContactFormDetails" class="form_details" [formGroup]="contactForm"
+                (ngSubmit)="saveDetails()">
+                <div class="form_option d-flex flex-column gap-1 align-self-stretch">
+                    <p class="m-0 label">First Name*</p>
+                    <input class="px-10 py-2 py-lg-8" formControlName="firstName" type="text"
+                        placeholder="Enter your First Name">
+                </div>
+                <div class="form_option d-flex flex-column gap-1 align-self-stretch">
+                    <p class="m-0 label">Last Name*</p>
+                    <input class="px-10 py-2 py-lg-8" type="text" formControlName="lastName"
+                        placeholder="Enter your Last Name">
+                </div>
+                <div class="form_option d-flex flex-column gap-1 align-self-stretch">
+                    <p class="m-0 label">Email*</p>
+                    <input class="px-10 py-2 py-lg-8" type="text" formControlName="email"
+                        placeholder="Enter your Email">
+                </div>
+                <div class="form_option d-flex flex-column gap-1 align-self-stretch">
+                    <p class="m-0 label">Phone Number*</p>
+                    <ngx-intl-tel-input [cssClass]="'custom'" [onlyCountries]="['us']" [enableAutoCountrySelect]="true"
+                        [enablePlaceholder]="true" customPlaceholder="Enter Mobile Number" [searchCountryFlag]="false"
+                        [phoneValidation]="true" name="mobile" [separateDialCode]="true" [maxLength]="10"
+                        class="intelInput" formControlName="number" (input)="onPhoneChange()">
+                    </ngx-intl-tel-input>
+                </div>
+                <button type="submit" [disabled]="contactForm.invalid" [ngClass]="{
+                    'disabled_btn':contactForm.invalid
+                }">Submit</button>
+            </form>
+
+            <div *ngIf="isContactFormOtp" class="form_header">
+                <p class="m-0">Verify Your Email</p>
+                <p class="m-0">A 4-digit verification code has been sent to your email. Enter the code below to verify
+                    your email address and continue.</p>
+            </div>
+            <form *ngIf="isContactFormOtp"
+                class="form_details align-self-stretch d-flex align-items-center flex-column gap-24 gap-lg-40"
+                [formGroup]="otpForm">
+                <ng-otp-input #otpInput [config]="{
+                    length: 4,
+                    inputClass: 'otp-input',
+                    allowNumbersOnly:true,
+                    containerClass:'opt-container'
+                    }" (onInputChange)="onOtpChange($event)">
+                </ng-otp-input>
+                <p class="m-0">Didn't receive the code? <span (click)="resendOtp()">Resend OTP</span></p>
+                <button type="submit" [disabled]="otpForm.invalid" [ngClass]="{
+                        'disabled_btn':otpForm.invalid
+                    }" (click)="verifyOtp()">Verify</button>
+            </form>
+            <div *ngIf="isContactFormSuccess" class="form_header">
+                <p class="m-0">Thanks for Reaching Out!</p>
+                <p class="m-0">Our professional agent will contact you within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+
+</div>

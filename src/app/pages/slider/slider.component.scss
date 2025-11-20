@@ -1,0 +1,118 @@
+.container {
+    section {
+
+        .section_title {
+            h3 {
+                color: #000;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.36px;
+            }
+
+            p {
+                color: #64748B;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.2px;
+            }
+        }
+
+        .price_div {
+            max-width: 720px;
+            min-width: 720px;
+
+            .price_div_top {
+                .text {
+                    color: #64748B;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 0.2px;
+                }
+
+                .price_text {
+                    color: #024FF0;
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 0.3px;
+                }
+            }
+        }
+
+        .saving_card {
+            border-radius: 6px;
+            border: 1px solid #E2E8EC;
+            background: #FFF;
+            box-shadow: 0 4px 9px 3px rgba(148, 163, 184, 0.20);
+            transition: all 0.3s ease;
+
+            p {
+                color: #000;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.24px;
+                font-weight: 500;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        section {
+
+            .section_title {
+                h3 {
+                    font-size: 20px;
+                    letter-spacing: 0.2px;
+                    line-height: 30px;
+                }
+
+                p {
+                    font-size: 16px;
+                    letter-spacing: 0.16px;
+                    line-height: 24px;
+                }
+            }
+
+            .price_div {
+                max-width: 100%;
+                min-width: 100%;
+
+                .price_div_top {
+                    .text {
+                        font-size: 16px;
+                        letter-spacing:  0.16px;
+                    }
+
+                    .price_text {
+                        font-size: 20px;
+                        letter-spacing: 0.2px;
+                    }
+                }
+            }
+
+            .saving_card {
+
+                p {
+                    font-size: 16px;
+                    letter-spacing: 0.2px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}

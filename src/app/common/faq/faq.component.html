@@ -1,0 +1,22 @@
+<div class="accordion d-flex flex-column gap-32 gap-lg-60" id="faqAccordion">
+    <div class="main_div d-flex flex-column gap-24" *ngFor="let section of topics; let topicIndex = index">
+        <h4 class="m-0" *ngIf="section.topic">{{ section.topic }}</h4>
+        <div class="accordion-items d-flex flex-column gap-24 gap-lg-40">
+            <div class="accordion-item px-12 py-12 px-lg-24 py-lg-24" *ngFor="let faq of section.faqs; let i = index">
+                <h2 class="accordion-header" [id]="'heading-' + topicIndex + '-' + i">
+                    <button class="accordion-button collapsed p-0" type="button" data-bs-toggle="collapse"
+                        [attr.data-bs-target]="'#collapse-' + topicIndex + '-' + i" aria-expanded="false"
+                        [attr.aria-controls]="'collapse-' + topicIndex + '-' + i">
+                        {{ faq?.question }}
+                    </button>
+                </h2>
+                <div [id]="'collapse-' + topicIndex + '-' + i" class="accordion-collapse collapse"
+                    [attr.aria-labelledby]="'heading-' + topicIndex + '-' + i" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p class="m-0" [ngClass]="faq?.class!==''?faq?.class:''" [innerHTML]="faq?.answer"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+<div class="container mt-85  d-flex justify-content-center px-sm-3 px-md-36">
+
+    <!-- step-1 -->
+    <form [formGroup]="buyForm" *ngIf="currentStep==1" (ngSubmit)="nextPrevStep(2)">
+        <div class="flow_container px-lg-72 pt-lg-72 pb-lg-24 py-36  d-flex flex-column gap-24 gap-lg-40">
+            <div class="flow_container_top d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2" routerLink="/">
+                    <img src="/assets/back_black.svg" alt="">
+                    <p class="m-0">Back</p>
+                </div>
+                <p class="step_text m-0">Step 1 of 4</p>
+            </div>
+            <h4 class="m-0">In Which US state are you buying?</h4>
+            <div class="dropdown d-flex flex-column gap-1">
+                <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <input formControlName="state" type="text" placeholder="Select State" readonly>
+                    <img src="/assets/chevron_up.svg" alt="">
+                </div>
+                <ul class="dropdown-menu py-10 px-2">
+                    <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':buyForm.get('state')?.value==opt.name
+                    }" *ngFor="let opt of USStates" (click)="selectValue('state',opt?.name)">
+                        {{ opt.name }}
+                    </a>
+                </ul>
+            </div>
+            <button class="submit_btn d-flex gap-10 align-items-center justify-content-center" type="submit" [ngClass]="{
+                        'disabled_btn':buyForm.get('state')?.invalid
+                    }" [disabled]="buyForm.get('state')?.invalid">
+                <p class="m-0">Next</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6.83333 10.375L11 6M11 6L6.83333 1.625M11 6H1" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <!-- step-2 -->
+    <form [formGroup]="buyForm" *ngIf="currentStep==2" (ngSubmit)="nextPrevStep(3)">
+        <div class="flow_container px-lg-72 pt-lg-72 pb-lg-24 py-36  d-flex flex-column gap-24 gap-lg-40">
+            <div class="flow_container_top d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2" (click)="nextPrevStep(1)">
+                    <img src="/assets/back_black.svg" alt="">
+                    <p class="m-0">Back</p>
+                </div>
+                <p class="step_text m-0">Step 2 of 4</p>
+            </div>
+            <h4 class="m-0">What category of property are you interested in?</h4>
+            <div class="dropdown d-flex flex-column gap-1">
+                <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <input formControlName="propertyType" type="text" placeholder="Select property type" readonly>
+                    <img src="/assets/chevron_up.svg" alt="">
+                </div>
+                <ul class="dropdown-menu py-10 px-2">
+                    <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':buyForm.get('propertyType')?.value==opt.name
+                    }" *ngFor="let opt of propertType" (click)="selectValue('propertyType',opt?.name)">
+                        {{ opt?.name }}
+                    </a>
+                </ul>
+            </div>
+            <button class="submit_btn d-flex gap-10 align-items-center justify-content-center" [ngClass]="{
+                        'disabled_btn':buyForm.get('propertyType')?.invalid
+                    }" [disabled]="buyForm.get('propertyType')?.invalid">
+                <p class="m-0">Next</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6.83333 10.375L11 6M11 6L6.83333 1.625M11 6H1" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <!-- step-3 -->
+    <form [formGroup]="buyForm" *ngIf="currentStep==3" (ngSubmit)="nextPrevStep(4)">
+        <div class="flow_container px-lg-72 pt-lg-72 pb-lg-24 py-36  d-flex flex-column gap-24 gap-lg-40">
+            <div class="flow_container_top d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2" (click)="nextPrevStep(2)">
+                    <img src="/assets/back_black.svg" alt="">
+                    <p class="m-0">Back</p>
+                </div>
+                <p class="step_text m-0">Step 3 of 4</p>
+            </div>
+            <h4 class="m-0">What specific type of property are you interested in?</h4>
+            <div class="dropdown d-flex flex-column gap-1">
+                <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <input formControlName="propertySubType" type="text" placeholder="Select property sub type"
+                        readonly>
+                    <img src="/assets/chevron_up.svg" alt="">
+                </div>
+                <ul class="dropdown-menu py-10 px-2">
+                    <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':buyForm.get('propertySubType')?.value==opt.name
+                    }" *ngFor="let opt of currentPropertyOptions" (click)="selectValue('propertySubType',opt?.name)">
+                        {{ opt?.name }}
+                    </a>
+                </ul>
+            </div>
+            <button class="submit_btn d-flex gap-10 align-items-center justify-content-center" [ngClass]="{
+                        'disabled_btn':buyForm.get('propertySubType')?.invalid
+                    }" [disabled]="buyForm.get('propertySubType')?.invalid">
+                <p class="m-0">Next</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6.83333 10.375L11 6M11 6L6.83333 1.625M11 6H1" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <!-- step-4 -->
+    <form [formGroup]="buyForm" *ngIf="currentStep==4" (ngSubmit)="openContactForm()">
+        <div class="flow_container px-lg-72 pt-lg-72 pb-lg-24 py-36  d-flex flex-column gap-24 gap-lg-40">
+            <div class="flow_container_top d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2" (click)="nextPrevStep(3)">
+                    <img src="/assets/back_black.svg" alt="">
+                    <p class="m-0">Back</p>
+                </div>
+                <p class="step_text m-0">Step 4 of 4</p>
+            </div>
+            <h4 class="m-0">What is your estimated price range?</h4>
+            <div class="dropdown d-flex flex-column gap-1">
+                <div class="dropdown_btn p-10 gap-10 d-flex align-items-center" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <input formControlName="priceRange" type="text" placeholder="Select price range" readonly>
+                    <img src="/assets/chevron_up.svg" alt="">
+                </div>
+                <ul class="dropdown-menu py-10 px-2">
+                    <a class="dropdown-item p-10" [ngClass]="{
+                        'selectedOption':buyForm.get('priceRange')?.value==opt.name
+                    }" *ngFor="let opt of currentPriceRangeOptions" (click)="selectPrice(opt)">
+                        {{ opt?.name }}
+                    </a>
+                </ul>
+            </div>
+            <div class="saving_card_div d-flex flex-column gap-3 py-24 px-12" *ngIf="buyForm.get('priceRange')?.valid">
+                <p class="m-0 text-center">Your Potential Cashback When Buying a New Home:
+                    <span>${{savingNewHome | number:'1.0-0'}}</span>
+                </p>
+                <p class="m-0 text-center">Your Potential Cashback When Buying a Old Home
+                    <span>${{savingOldHome | number:'1.0-0'}}</span>
+                </p>
+            </div>
+            <button class="submit_btn d-flex gap-10 align-items-center justify-content-center" [ngClass]="{
+                        'disabled_btn':buyForm.get('priceRange')?.invalid
+                    }" [disabled]="buyForm.get('priceRange')?.invalid">
+                <p class="m-0">Next</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6.83333 10.375L11 6M11 6L6.83333 1.625M11 6H1" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <!-- {{buyForm.value | json}} -->
+
+    <app-contact-form *ngIf="openContactModal" id="buyContactModal" (onSave)="handleContactForm($event)" (onClose)="handleClose()" [formId]="buyForm.get('id')?.value" [contactFormData]="buyForm.get('contactForm')?.value"></app-contact-form>
+
+    <app-verify-otp *ngIf="openOtpModal" (onClose)="closeOtpModal()" (otpVerified)="handelOtpVerify()" (changeEmail)="changeEmail()"
+    [email]="buyForm.get('contactForm')?.get('email')?.value"
+    [formId]="buyForm.get('id')?.value" [type]="'BUY'"></app-verify-otp>
+    
+    <app-success-modal *ngIf="openSuccessModal" (onClose)="successClose()"></app-success-modal>
+
+</div>
