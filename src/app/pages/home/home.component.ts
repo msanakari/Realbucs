@@ -166,4 +166,8 @@ export class HomeComponent {
       }
     }, 1000 / frameRate);
   }
+
+  viewFaq() {
+    this.gS.navigate('/faq');
+  }
 }

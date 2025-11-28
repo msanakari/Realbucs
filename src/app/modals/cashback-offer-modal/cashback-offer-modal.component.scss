@@ -51,6 +51,7 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: bounce_flip 0.6s cubic-bezier(.25,.46,.45,.94) forwards;
 }
 
 
@@ -137,4 +138,22 @@ canvas {
             justify-content: center !important;
         }
     }
+}
+
+@keyframes bounce_flip {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

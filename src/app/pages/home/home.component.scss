@@ -259,14 +259,14 @@
 }
 
 .home_page_upper_new::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
 }
 
 .home_page_upper_buy {
@@ -515,6 +515,24 @@
         line-height: 44px;
         letter-spacing: -0.72px;
     }
+
+    button {
+        height: 48px;
+        border-radius: 10px;
+        background: #0153ff;
+        box-shadow: 0 4px 16px #2b93ee1f;
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
 }
 
 @media (max-width:768px) {
@@ -730,6 +748,18 @@
         h4 {
             font-size: 20px;
             letter-spacing: -0.4px;
+        }
+
+        button {
+            height: 40px;
+            font-size: 12px;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
