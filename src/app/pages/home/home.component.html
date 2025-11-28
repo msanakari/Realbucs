@@ -118,24 +118,6 @@
             }
         </div>
         <div class="cashback_card_new_bottom d-flex align-items-center justify-content-center gap-16">
-            <!-- <div class="bottom_left d-flex align-items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path
-                        d="M13.3334 17.5V15.8333C13.3334 14.9493 12.9822 14.1014 12.357 13.4763C11.7319 12.8512 10.8841 12.5 10 12.5H5.00002C4.11597 12.5 3.26812 12.8512 2.643 13.4763C2.01788 14.1014 1.66669 14.9493 1.66669 15.8333V17.5"
-                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M7.50002 9.16667C9.34097 9.16667 10.8334 7.67428 10.8334 5.83333C10.8334 3.99238 9.34097 2.5 7.50002 2.5C5.65907 2.5 4.16669 3.99238 4.16669 5.83333C4.16669 7.67428 5.65907 9.16667 7.50002 9.16667Z"
-                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M18.3333 17.4991V15.8324C18.3328 15.0939 18.0869 14.3764 17.6345 13.7927C17.182 13.209 16.5484 12.7921 15.8333 12.6074"
-                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M13.3333 2.60742C14.0503 2.79101 14.6858 3.20801 15.1397 3.79268C15.5935 4.37735 15.8398 5.09645 15.8398 5.83659C15.8398 6.57673 15.5935 7.29582 15.1397 7.8805C14.6858 8.46517 14.0503 8.88217 13.3333 9.06576"
-                        stroke="#0153FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="m-0">5,000+ Happy Buyers</p>
-            </div>
-            <div class="bottom_divider"></div> -->
             <div class="bottom_right d-flex align-items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                     <path d="M15.1666 4.66602L9.49998 10.3327L6.16665 6.99935L1.83331 11.3327" stroke="#FFC105"
@@ -155,8 +137,9 @@
 <app-why-work></app-why-work>
 
 <div class="container faq_container py-24 px-lg-72 py-lg-72 d-flex flex-column gap-24 gap-lg-40 align-items-center">
-    <h4 class="m-0">FAQ</h4>
+    <h4 class="m-0">FAQ's</h4>
     <app-faq class="align-self-stretch" [topics]="faqData"></app-faq>
+    <button (click)="viewFaq()" class="d-flex gap-1 gap-lg-10 px-lg-3 py-2 align-items-center"> View All <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" ><path  d="M13.1667 6.5L19 12.5M19 12.5L13.1667 18.5M19 12.5L5 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="ng-tns-c2394764406-2"></path></svg></button>
 </div>
 
 <app-cashback-offer-modal *ngIf="!gS.isWebsiteOpen" (onClose)="closeCashbackModal()"></app-cashback-offer-modal>
