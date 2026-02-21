@@ -89,6 +89,9 @@ export class AgentComponent {
 
   openOtpModal: boolean = false;
 
+  bgImage = '/assets/home/bg_new_agent.jpg';
+
+
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.handleResize();
