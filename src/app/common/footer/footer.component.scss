@@ -1,5 +1,5 @@
 .footer_section {
-    background: #F8FAFC;
+    background: #0153ff;
 
     .container {
         .footer_top {
@@ -53,7 +53,7 @@
             .footer_top_right {
                 .options_div {
                     h4 {
-                        color: #000;
+                        color: #ffffff;
                         font-size: 20px;
                         font-style: normal;
                         font-weight: 600;
@@ -61,15 +61,20 @@
                     }
 
                     a {
-                        color: #64748B;
+                        color: #ffffff;
                         font-size: 16px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: 24px;
+                        text-decoration: underline;
+                        text-decoration-thickness: 1px;
+                        text-decoration-color: transparent;
+                        text-underline-offset: 3px;
+                        transition: text-decoration-color 180ms;
                     }
 
                     a:hover {
-                        color: #024FF0;
+                        text-decoration-color: #FFFFFF;
                     }
                 }
             }
@@ -77,20 +82,25 @@
 
         .footer_bottom {
             a {
-                color: #64748B;
+                color: #ffffff;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 24px;
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-decoration-color: transparent;
+                text-underline-offset: 3px;
+                transition: text-decoration-color 180ms;
             }
 
             a:hover {
-                color: #024FF0;
+                text-decoration-color: #FFFFFF;
             }
 
             p {
                 flex: 1 0 0;
-                color: #64748B;
+                color: #ffffff;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
@@ -137,7 +147,7 @@
                 .footer_top_right {
                     .options_div {
                         h4 {
-                            color: #000;
+                            color: #ffffff;
                             font-size: 20px;
                             font-style: normal;
                             font-weight: 600;
@@ -145,7 +155,7 @@
                         }
 
                         a {
-                            color: #64748B;
+                            color: #ffffff;
                             font-size: 16px;
                             font-style: normal;
                             font-weight: 400;
@@ -157,7 +167,7 @@
 
             .footer_bottom {
                 a {
-                    color: #64748B;
+                    color: #ffffff;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
@@ -166,7 +176,7 @@
 
                 p {
                     flex: 1 0 0;
-                    color: #64748B;
+                    color: #ffffff;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
